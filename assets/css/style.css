@@ -1,0 +1,303 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow:  hidden;
+    font-size: 1em;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header {
+  position: absolute;
+  top: 1.5em;
+  left: 2em;
+  width:88%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.icon {
+  display: none;
+}
+
+.icon.active {
+  display: block;
+  filter: invert(100%);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+/*nav*/
+
+.nav--container{
+  display: none;
+}
+
+.nav--container.active{
+  display: block;
+  position: absolute;
+  left: 5%;
+  top: 7em;
+  z-index: 7 !important;
+  background-color: rgba(0,0,0,0.75);
+  width: 400px;
+  height: 334px;
+}
+.nav--container > ul {
+  position: relative;
+  left: -25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+nav ul {
+  margin-top: 2em;
+}
+
+nav ul li{
+  margin: 2em 0;
+}
+
+li a:hover, li a:active {
+  color: #575757;
+  transition:  color ease-in 1s;
+}
+/*container*/
+
+
+.container {
+ position: relative;
+ top: 0;
+ left: 0;
+ background-color: #000;
+ width: 100%;
+}
+
+.container .card {
+ z-index: 0;
+}
+
+video {
+clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+}
+
+/*Animacoes*/
+
+@keyframes anima {
+0% {
+ clip-path: circle(0% at 100% 100%);
+}
+
+
+100% {
+clip-path: circle(141% at 100% 100%);
+}
+}
+
+@keyframes showTime {
+  0% {
+    opacity: 0;
+  }
+  
+  50% {
+    opacity: 0.2;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moves{
+  0% {
+    transform: scale(0.5);
+    background-color: #484747;
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+  
+
+/*card*/
+
+.card{
+width: 100%;
+height: 100vh;
+}
+
+.container  .card.active video {
+position : fixed;
+top: 0 ;
+left: 0;
+width: 100%;
+height: 100vh;
+object-fit: cover;
+z-index: 1;
+clip-path: circle(150% at 100% 100%);
+animation: anima linear 1.5s ;
+}
+
+/*card and content*/
+
+.card.active .content {
+position: absolute;
+top: 5em;
+left: 2.5em;
+z-index: 1;
+width: 700px;
+}
+
+.content h2, 
+.content p,
+.content .cartaz-filme {
+opacity: 0;
+}
+
+.card.active .content h2, 
+.card.active .content p,
+.card.active .content .cartaz-filme {
+opacity: 1;
+animation: showTime ease-in 2s;
+}
+
+.card.active .content h2 {
+font-size: 2.7em;
+text-transform: capitalize;
+letter-spacing: 7px;
+font-weight: 700;
+}
+
+.card.active .content p {
+width: 370px;
+font-size: 1.4em;
+line-height: 27px;
+}
+
+.card.active .cartaz-filme {
+width: 100px;
+} 
+
+/*nav-points */
+
+.container .nav-points {
+position: absolute;
+top: 14em;
+right: -250px;
+z-index: 2;
+width: 300px;
+height: 50px;
+padding: 0 2em;
+}
+
+.list {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.list .bubble {
+width: 15px;
+height: 15px;
+background-color: #575757;
+border-radius: 50px;
+transform: scale(1.1);
+}
+
+.bubble {
+cursor: pointer;
+margin: 1em 0;
+}
+
+.bubble.active {
+background-color: #282828;
+}
+
+.bubble:active {
+animation: moves ease-in 0.1s;
+background-color: #a3a3a3;
+}
+
+
+
+@media (min-width:1024px) {
+  header {
+    width:95%;
+  }
+
+  .nav--container.active{
+    left: 20%;
+    top: 7em;
+    width: 600px;
+    height: 434px;
+  }
+  
+  nav ul {
+    margin-top: 4em;
+  }
+  
+  nav ul li{
+    font-size: 1.2em;
+  }
+
+  .card.active .content h2 {
+    font-size: 3em;
+    }
+    
+
+  .card.active .content p {
+    width: 600px;
+    font-size: 1.5em;
+    line-height: 27px;
+    }
+
+    .card.active .cartaz-filme {
+      width: 150px;
+      } 
+     
+        
+}
+
+@media (min-width:1100px) {
+
+  header {
+    position: absolute;
+    top: 1.5em;
+    left: 5em;
+    width:88%;
+  }
+
+
+  .card.active .content {
+    top: 5em;
+    left: 5em;
+    }
+
+    .container .nav-points {
+      right: -180px;
+      }
+      
+    
+}
