@@ -19,8 +19,8 @@ a {
 header {
   position: absolute;
   top: 1.5em;
-  left: 2em;
-  width:88%;
+  left: 1em;
+  width:90%;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -202,7 +202,7 @@ line-height: 27px;
 }
 
 .card.active .cartaz-filme {
-width: 100px;
+width: 120px;
 } 
 
 /*nav-points */
@@ -248,6 +248,12 @@ background-color: #a3a3a3;
 
 
 @media (min-width: 500px) {
+
+  header {
+    left: 2.5em;
+  }
+
+
   .container  .card.active >  .content {
     position:fixed;
     top: 10em;
@@ -268,7 +274,7 @@ background-color: #a3a3a3;
 
 @media (min-width: 700px) {
   .container .nav-points {
-    right: -205px;
+    right: -225px;
     z-index: 2;
     width: 300px;
     height: 50px;
@@ -293,9 +299,10 @@ background-color: #a3a3a3;
 
 
 
-@media (min-width:1024px) {
+@media (min-width:1000px) {
   header {
-    width:95%;
+    width:90%;
+  
   }
 
   .nav--container.active{
@@ -323,7 +330,7 @@ background-color: #a3a3a3;
   
   .container .nav-points {
     top: 10%;
-    right: -245px;
+    right: -205px;
     height: 100px;
     }  
 
@@ -339,13 +346,14 @@ background-color: #a3a3a3;
     }
 
     .card.active .cartaz-filme {
-      width: 250px;
+      margin-top: 1.2em;
+      width: 150px;
       } 
      
         
 }
 
-@media (min-width:1100px) {
+@media (min-width:1440px) {
 
   header {
     position: absolute;
@@ -355,10 +363,18 @@ background-color: #a3a3a3;
   }
 
 
-  .card.active .content {
-    top: 5em;
+
+  .container  .card.active >  .content {
+    position:fixed;
+    top: 10em;
     left: 5em;
     }
+
+    .card.active .cartaz-filme {
+      margin-top: 1.2em;
+      width: 220px;
+      } 
+    
 
     .container .nav-points {
       right: -180px;
