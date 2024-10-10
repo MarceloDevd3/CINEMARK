@@ -302,8 +302,12 @@ background-color: #a3a3a3;
 @media (min-width:1000px) {
   header {
     width:90%;
-  
   }
+
+  .container  .card.active >  .content {
+    position:fixed;
+    top: 5rem;
+    }
 
   .nav--container.active{
     left: 20%;
@@ -330,9 +334,14 @@ background-color: #a3a3a3;
   
   .container .nav-points {
     top: 10%;
-    right: -205px;
+    right: -180px;
     height: 100px;
-    }  
+    }
+
+   
+   
+   
+  
 
   .card.active .content h2 {
     font-size: 3em;
@@ -345,10 +354,7 @@ background-color: #a3a3a3;
     line-height: 27px;
     }
 
-    .card.active .cartaz-filme {
-      margin-top: 1.2em;
-      width: 150px;
-      } 
+    
      
         
 }
